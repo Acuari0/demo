@@ -495,12 +495,12 @@ public class SiteControllerTests {
             site.setStatus("accepted");
             json=ow.writeValueAsString(site);
             if(!sites.stream().anyMatch((e)->!e.getUrl().equals(site.getUrl()))){
-                System.out.println("AGREGAAR");
+              
                 sites.add(new Site(UUID.randomUUID(),  site.getStatus(), site.getUrl(), site.getContent()));
                 jsonList.add(ow.writeValueAsString(site));
             }
                 
-            System.out.println("AGREGAAR");
+           
             mockMvc.perform(MockMvcRequestBuilders.post("/api/content/check")
             .contentType(MediaType.APPLICATION_JSON)
             .content(json)

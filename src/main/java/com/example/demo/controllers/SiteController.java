@@ -65,7 +65,7 @@ public class SiteController {
     @DeleteMapping("/api/content")
     private ResponseEntity<?> removeAuthorizedSite(@RequestBody Site site) {
         int sucess=siteService.removeUrl(site.getUrl());
-        System.out.println(sucess);
+       
         if(sucess>=1)
             return new ResponseEntity<>(HttpStatus.valueOf(200));
         return new ResponseEntity<>(HttpStatus.valueOf(204));
